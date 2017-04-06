@@ -1,3 +1,6 @@
 {
-  "directory": "public/vendor"
+  "directory": "www/resources/lib",
+  "registry": "http://bower.herokuapp.com",
+  "proxy":"http://1305985:Kolkata!apr2017@172.18.18.5:8080/",
+  "https-proxy":"http://1305985:Kolkata!apr2017@172.18.18.5:8080/"
 }
