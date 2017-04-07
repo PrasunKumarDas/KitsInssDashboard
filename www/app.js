@@ -1,36 +1,24 @@
-'use strict';
-var app=angular
-.module('mongooseApp',['ngRoute','ngResource','homeModule','userModule'])
-.constant('CONFIG', 
-    {
-	    DebugMode: true,
-	    StepCounter: 0,
-	    APIHost: '',
-	   	IMAGEURL: '',
-	    
-
-	})
-
-
-app.config(['$routeProvider',
-	function($routeProvider){
-		$routeProvider
-		.when('/',{
-			templateUrl:'views/home.html',
-			controller:'homeController'
-		})
-
-		.when('/users',{
-			templateUrl:'views/users.html',
-			controller:'userController'
-		})
-		.when('/addUser',{
-			templateUrl:'views/addUser.html',
-			controller:'userController'
-		})
-	    .otherwise({
-				redirectTo:'/'
-			});
-
-	}]);
-
+(function() {
+    'use strict';
+    angular
+        .module('ISS-UI', [
+            'ui.router',
+            'home'   
+        ])
+        .config(['$stateProvider', '$urlRouterProvider',
+            function($stateProvider, $urlRouterProvider) {
+                $stateProvider
+                    .state('home', {
+                        url: '/home',
+                        templateUrl: 'views/home.view.html',
+                        controller: 'HomeController as home',
+                        params: {
+                            returnTo: null,
+                            returnToParams: null
+                        }
+                    })
+                    
+                $urlRouterProvider.otherwise('/');
+            }
+        ])
+ }());

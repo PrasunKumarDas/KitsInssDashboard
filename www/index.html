@@ -1,17 +1,22 @@
 <!DOCTYPE html>
-<html ng-app="SP-UI">
+<html ng-app="ISS-UI">
 <head>
-	 <title>INSS Dashboard</title>
+	 <title>ISS Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/resources/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="/resources/lib/angular/angular.js"></script>
+
 </head>
 <body>
 
 <!-- content is injected here -->
-<div ng-view></div>
+ <div ui-view></div>
 <!-- End content is injected here -->
 
 </body>
-<script type="text/javascript" src="./app.js"></script>
+	<script src="/resources/lib/angular/angular.js"></script>
+	<script src="/resources/lib/angular-ui-router/release/angular-ui-router.js"></script>
+	<!-- Home -->
+	<script src="controllers/home.controller.js"></script>
+	<!--App-->
+	<script type="text/javascript" src="./app.js"></script>
 </html>

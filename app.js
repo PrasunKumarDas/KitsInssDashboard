@@ -3,20 +3,20 @@
    TCS/1305985
  */
 var express        = require('express'),
-	app 		   = express(),
+    app            = express(),
     path           = require('path'),
     logger         = require('morgan'),
     bodyParser     = require('body-parser'),
     methodOverride = require('method-override'),
     errorHandler   = require('errorhandler'),
     config         = require('./config'),    
-	fs			   = require('fs'),
-	routes 		   = require('./routes')(app);
+    fs             = require('fs'),
+    routes         = require('./routes')(app);
 
 /*fs.readdirSync(__dirname+'/server/models').forEach(function(filename){
-	if(~filename.indexOf('.js')){
-		require('./server/models/'+filename);
-	}
+  if(~filename.indexOf('.js')){
+    require('./server/models/'+filename);
+  }
 
 })*/
 
@@ -28,7 +28,7 @@ app
   .use(logger('dev'))
   .use(bodyParser())
   .use(methodOverride())
-  .use(express.static(path.join(__dirname, 'client')))
+  .use(express.static(path.join(__dirname, 'www')))
  
   .use(function (req, res) {
     res.status(404).render('404', {title: 'Not Found :('});
