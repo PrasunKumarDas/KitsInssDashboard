@@ -2,23 +2,24 @@
     'use strict';
     angular
         .module('ISS-UI', [
-            'ui.router',
-            'home'   
+            'ui.router' 
         ])
-        .config(['$stateProvider', '$urlRouterProvider',
-            function($stateProvider, $urlRouterProvider) {
+        .config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
+            function($stateProvider, $urlRouterProvider, $locationProvider) {
+            	
                 $stateProvider
-                    .state('home', {
-                        url: '/home',
-                        templateUrl: 'views/home.view.html',
-                        controller: 'HomeController as home',
+                    .state('dashboard', {
+                        url: '/dashboard',
+                        templateUrl: 'views/dashboard.view.html',
+                        controller: 'DashboardController as dashboard',
                         params: {
                             returnTo: null,
                             returnToParams: null
                         }
                     })
                     
-                $urlRouterProvider.otherwise('/');
+                $urlRouterProvider.otherwise('/dashboard');
+               
             }
         ])
  }());
