@@ -1,26 +1,35 @@
 <div class="container">
 <div class="row">
   <div class="col-md-12">
-    <div class="row">
-		<table class="table table-bordered">
-		<tr>
-			<th>Till No</th>
-			<th>Store No</th>
-			<th>Store Name</th>
-			<th>Latest Post Time</th>
-			<th>Elapsed By</th>
-			<th>Till Status</th>			
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-            <td></td>
-		</tr>
-		</table>
-    </div>
+  <div class="col-md-4">
+        <!-- <canvas class="chart chart-line" chart-data="data" chart-labels="labels" 
+    chart-series="series" chart-click="onClick"></canvas>
+ -->
+  </div>
+  <div class="col-md-8">
+      
+        <table class="table report">
+        <tr>
+            <th>Till No</th>
+            <th>Store No</th>
+            <th>Store Name</th>
+            <th>Latest Transaction Time</th>
+            <th>Elapsed By</th>
+            <th>Till Status</th>            
+        </tr>
+        <tr ng-repeat="tillInfo in dashboard.tillInformation">
+            <td>{{tillInfo.tillNo}}</td>
+            <td>{{tillInfo.storeNo}}</td>
+            <td>{{tillInfo.storeName}}</td>
+            <td>{{tillInfo.latestPostTimeStamp}}</td>
+            <td ng-class="tillInfo.elapseStatus">{{tillInfo.elapsedBy}}</td>
+            <td><div ng-class="tillInfo.tillStatus"></div></td>
+        </tr>
+        </table>
+   
+
+  </div>
+    
   </div>
 </div>
 </div>

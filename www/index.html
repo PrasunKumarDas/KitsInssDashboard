@@ -1,21 +1,69 @@
+
 <!DOCTYPE html>
 <html>
-<head>
-	 <title>ISS Dashboard</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/resources/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/resources/css/styles.css" rel="stylesheet">
-</head>
-<body ng-app="ISS-UI">
-<div class="wrapper">
-	<!-- content is injected here -->
-	 <div ui-view></div>
-	<!-- End content is injected here -->
-</div>
-</body>
-	<script src="/resources/lib/angular/angular.js"></script>
-	<script src="/resources/lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>ISS APP</title>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<link href="/resources/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    	<link href="/resources/css/styles.css" rel="stylesheet">
+    </head>
+    <body class="desktop-app"  ng-app="ISS-UI">
+        <div class="main-wrap">
+            <header class="bar bar-header bar-search">
+                <!-- <div class="left-buttons">
+                    <button class="icon icon-arrow-back">Back</button>
+                    <button class="icon icon-navicon">Menu</button>
+                </div> -->
+                <h1 class="title title-left">Dashboard</h1>
+                
+            </header>
+            <!-- Menu Small-->
+            <nav class="menu">
+                 <!--  <ul class="menu__list menu__list-closed">
+                    <li>
+                        <a href="" class="icon icon-menu-cart active">Shopping Cart<span class="indicator">6</span></a>
+                    </li>
+                    <li>
+                        <span class="icon icon-menu-user active">User</span>
+                    </li>
+                    <li>
+                        <span class="icon icon-menu-useradd">User Add</span>
+                    </li>
+                    <li>
+                        <a href="" class="icon icon-menu-trans">Transaction </a>
+                    </li>
+                    <li>
+                        <a href="" class="icon icon-menu-trans-recent">Transaction Recent</a>
+                    </li>
+                    <li>
+                        <a href="" class="icon icon-menu-trans-last">Transaction Last</a>
+                    </li>
+                    <li class="push-bottom">
+                        <a href="" class="icon icon-menu-settings">Settings</a>
+                    </li>
+                    <li>
+                        <a href="" class="icon icon-menu-switch">Switch</a>
+                    </li>
+                </ul> -->
 
+
+            </nav>
+            <div class="backdrop backdrop--menu"></div>
+            <!-- Main Content -->
+            <ui-view name="menuContent" class="main-content-wrap">
+            <!-- content is injected here -->
+				 <div ui-view></div>
+			<!-- End content is injected here -->
+            </ui-view>
+        </div>
+    </body>
+    <script src="/resources/lib/angular/angular.js"></script>
+	<script src="/resources/lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- <script src="/resources/lib/chart.js/Chart.min.js"></script>
+    <script src="/resources/lib/angular-chart.js/dist/angular-chart.min.js"></script> -->
 	<!--App-->
 	<script src="./app.js"></script>
 	<!-- Dashboard -->

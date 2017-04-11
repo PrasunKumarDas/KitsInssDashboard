@@ -29,6 +29,7 @@ app
   .use(bodyParser())
   .use(methodOverride())
   .use(express.static(path.join(__dirname, 'www')))
+
  
   .use(function (req, res) {
     res.status(404).render('404', {title: 'Not Found :('});
