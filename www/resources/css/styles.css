@@ -3554,11 +3554,11 @@ html {
    width: 15px;
   height: 15px;
 }
-.AMBER{
+/*.AMBER{
  background-image: url("../images/yellow.gif");
    width: 15px;
   height: 15px;
-}
+}*/
 .report{
 
   background: #fff;
@@ -3579,4 +3579,8 @@ html {
 .elapse-red{
   background: #990000;
   color: #fff;
+}
+
+.highcharts-credits{
+  display: none;
 }
