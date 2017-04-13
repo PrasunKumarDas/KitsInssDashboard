@@ -9,7 +9,7 @@ var express        = require('express'),
     bodyParser     = require('body-parser'),
     methodOverride = require('method-override'),
     errorHandler   = require('errorhandler'),
-    config         = require('./config'),    
+    config         = require('./config/config'),    
     fs             = require('fs'),
     routes         = require('./routes')(app);
 
@@ -23,7 +23,9 @@ var express        = require('express'),
 app.set('port', config.server.port);
 //app.set('views', path.join(__dirname, 'views'));
 //app.set('view engine', 'ejs');
-
+// app.use(express.static(path.join(__dirname, 'public')));
+// app.set('views', path.join(__dirname, 'server/views'));
+// app.set('view engine', 'ejs');
 app
   .use(logger('dev'))
   .use(bodyParser())
